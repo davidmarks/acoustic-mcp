@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "acoustic-mcp": {
+      "command": "uv",
+      "args": ["--directory", "acoustic-mcp", "run", "acoustic-mcp"],
+      "env": {
+        "TMPDIR": "/tmp/claude-1000",
+        "UV_CACHE_DIR": "/tmp/claude-1000/uv-cache"
+      }
+    }
+  }
+}

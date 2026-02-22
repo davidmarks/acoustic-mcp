@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+dist/
+build/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# uv
+uv.lock
+
+# Claude Code
+.claude/
+
+# STL files (large binaries — keep the .scad source)
+*.stl
+
+# Shell config (personal dotfiles in project dir)
+.bash_profile
+.bashrc
+.zprofile
+.zshrc
+.profile
+.ripgreprc
+.gitmodules
+.gitconfig
+
+# Stale git-like artifacts at project root
+/HEAD
+/config
+/hooks
+/objects
+/refs

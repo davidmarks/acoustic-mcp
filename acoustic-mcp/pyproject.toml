@@ -3,6 +3,7 @@ name = "acoustic-mcp"
 version = "0.1.0"
 description = "Acoustic absorber design MCP server — calculates absorption coefficients for porous, perforated, membrane, and Helmholtz absorbers using the Transfer Matrix Method."
 requires-python = ">=3.10"
+license = "AGPL-3.0-or-later"
 dependencies = [
     "mcp[cli]>=1.0",
     "numpy>=1.26",

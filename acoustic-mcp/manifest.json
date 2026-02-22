@@ -44,5 +44,5 @@
     }
   },
   "keywords": ["acoustics", "absorber", "room-treatment", "transfer-matrix-method", "NRC"],
-  "license": "MIT"
+  "license": "AGPL-3.0"
 }

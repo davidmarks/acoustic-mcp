@@ -215,12 +215,7 @@ https://doi.org/10.1038/s41598-017-05710-5
 
 ## License
 
-This design is provided for **personal and educational use**. The metadiffuser concept is based on published scientific research (open access). 
-
-For commercial production or sale, please:
-1. Review the original research paper's licensing
-2. Consider modifications to avoid IP issues
-3. Test and validate acoustic performance
+This project is licensed under the [GNU Affero General Public License v3.0](LICENSE) (AGPL-3.0). The metadiffuser concept is based on published scientific research (open access).
 
 ---
 

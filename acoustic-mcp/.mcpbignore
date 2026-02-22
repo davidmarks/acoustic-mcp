@@ -1,0 +1,14 @@
+tests/
+.venv/
+*.egg-info/
+__pycache__/
+*.pyc
+uv.lock
+.git/
+.claude/
+.pytest_cache/
+HEAD
+config
+hooks
+objects
+refs

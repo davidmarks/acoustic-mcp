@@ -1,0 +1,48 @@
+{
+  "manifest_version": "0.4",
+  "name": "acoustic-mcp",
+  "display_name": "Acoustic Absorber Designer",
+  "version": "0.1.0",
+  "description": "Design and simulate acoustic absorbers using the Transfer Matrix Method. Calculate absorption coefficients for porous, perforated, membrane, and Helmholtz absorbers, optimize designs, and analyze room modes.",
+  "author": {
+    "name": "David Marks",
+    "url": "https://github.com/davidmarks"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidmarks/acoustic-mcp.git"
+  },
+  "server": {
+    "type": "uv",
+    "entry_point": "acoustic/server.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "${__dirname}",
+        "run",
+        "acoustic-mcp"
+      ]
+    }
+  },
+  "tools": [
+    { "name": "ping", "description": "Health check" },
+    { "name": "calculate_porous_layer", "description": "Calculate absorption of a porous absorber with optional air gap" },
+    { "name": "calculate_perforated_panel", "description": "Calculate absorption of a perforated, slotted, or micro-perforated panel" },
+    { "name": "calculate_membrane_absorber", "description": "Calculate absorption of a membrane or panel absorber" },
+    { "name": "calculate_helmholtz", "description": "Calculate Helmholtz resonator properties from geometry" },
+    { "name": "calculate_multilayer", "description": "Calculate absorption of an arbitrary multi-layer stack" },
+    { "name": "material_properties", "description": "Look up flow resistivity and properties for common acoustic materials" },
+    { "name": "list_available_models", "description": "List available acoustic models with citations and valid ranges" },
+    { "name": "optimize_absorber", "description": "Optimize absorber design for target frequency or broadband NRC" },
+    { "name": "room_modes", "description": "Calculate room mode frequencies for a rectangular room" }
+  ],
+  "compatibility": {
+    "platforms": ["darwin", "linux", "win32"],
+    "runtimes": {
+      "python": ">=3.10"
+    }
+  },
+  "keywords": ["acoustics", "absorber", "room-treatment", "transfer-matrix-method", "NRC"],
+  "license": "MIT"
+}

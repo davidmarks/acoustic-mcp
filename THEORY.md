@@ -114,7 +114,7 @@ This means a **2.5 cm deep slit** acts like a **25-125 cm deep well** at the rig
 
 **Slit Depth (L)**:
 - Target: λ₀/20 to λ₀/50
-- For 250 Hz: 1.7-4.3 cm
+- For 250 Hz: 2.7-6.9 cm
 - This design: 25 mm (λ₀/55 at 250 Hz)
 
 **HR Neck Dimensions**:
@@ -159,7 +159,7 @@ In narrow ducts, two loss mechanisms dominate:
 ```
 Boundary layer thickness: δ_v = √(2η / (ρ₀ω))
 
-For 1 kHz air: δ_v ≈ 0.18 mm
+For 1 kHz air: δ_v ≈ 0.069 mm
 ```
 
 When duct width comparable to boundary layer, viscous drag is significant.
@@ -168,7 +168,7 @@ When duct width comparable to boundary layer, viscous drag is significant.
 ```
 Thermal boundary layer: δ_t = √(2κ / (ρ₀c_pω))
 
-For 1 kHz air: δ_t ≈ 0.21 mm
+For 1 kHz air: δ_t ≈ 0.082 mm
 ```
 
 Heat exchange with walls dissipates acoustic energy.
@@ -210,14 +210,14 @@ At critical coupling, **all energy is absorbed** (perfect absorber mode).
 Quantifies scattering uniformity:
 
 ```
-δ_ϕ = [Σ|R(θ)|²]² - Σ|R(θ)|⁴  
-      ─────────────────────────
-           Σ|R(θ)|⁴
+         [Σ|R(θ)|²]² - n × Σ|R(θ)|⁴
+δ_ϕ =  ─────────────────────────────
+            (n - 1) × Σ|R(θ)|⁴
 
 Normalized: δ_n = (δ_ϕ - δ_flat) / (1 - δ_flat)
 ```
 
-Where R(θ) is polar response at angle θ.
+Where R(θ) is polar response at angle θ, n is the number of observation angles (Cox & D'Antonio, 2009).
 
 - **δ_n = 0**: All energy in one direction (specular)
 - **δ_n = 1**: Perfectly uniform (Lambertian)
@@ -228,11 +228,11 @@ Where R(θ) is polar response at angle θ.
 Alternative metric (ISO 17497-1):
 
 ```
-s = 1 - |R₀|² / Σ|Rᵢ|²
+s = 1 - E_specular / E_total
 
-Where:
-- R₀ = specular reflection coefficient
-- Σ|Rᵢ|² = total scattered energy
+Where (per ISO 17497-1):
+- E_specular = |⟨p_s⟩|²  (coherent spatial average, squared)
+- E_total = ⟨|p_s|²⟩     (average of squared pressures)
 ```
 
 High scattering coefficient → energy spread away from specular direction.
@@ -271,8 +271,10 @@ For this design's typical HR:
 Neck: 2 mm × 2 mm × 2 mm
 Cavity: 9 mm × 9 mm × 9 mm
 
-f_HR ≈ 343/(2π) × √(4/(81×10⁻⁶ × 2×10⁻³))
-    ≈ 1350 Hz
+A_n = 4×10⁻⁶ m², V_c = 729×10⁻⁹ m³, l_eff ≈ 3.7×10⁻³ m (with end corrections)
+
+f_HR ≈ 343/(2π) × √(4×10⁻⁶ / (729×10⁻⁹ × 3.7×10⁻³))
+    ≈ 2100 Hz
 ```
 
 Multiple HRs create **multiple resonances** from 300-3000 Hz range.
@@ -282,8 +284,10 @@ Multiple HRs create **multiple resonances** from 300-3000 Hz range.
 The metamaterial acts as if it were a QWR with effective depth:
 
 ```
-L_eff = c₀/(4f) × c₀/c_p(f)
-      = L × c₀/c_p(f)
+L_eff = L × c₀/c_p(f)
+
+Where L is the physical slit depth and c_p(f) is the slow-sound phase velocity.
+
       ≈ 25 mm × 10-50
       ≈ 0.25 - 1.25 m equivalent!
 ```
